@@ -1,0 +1,10 @@
+hello-rust:
+  container_name: hello-rust
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/app
+  log_opt:
+    max-size: "500k"
+  ports:
+    - "8080:8080"

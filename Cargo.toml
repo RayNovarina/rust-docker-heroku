@@ -1,0 +1,14 @@
+[package]
+
+name = "hello-rust"
+version = "1.0.0"
+authors = ["dongrify@gmail.com"]
+
+[[bin]]
+name = "hello"
+
+[dependencies]
+iron = "*"
+
+[dependencies.router]
+git = "https://github.com/iron/router.git"
