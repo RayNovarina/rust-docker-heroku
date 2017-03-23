@@ -126,9 +126,9 @@ $ heroku plugins:install heroku-container-tools
 
   Installing plugin heroku-container-tools... done
 
-$ heroku create rust-94037
-  Creating ⬢ rust-94037... done
-  https://rust-94037.herokuapp.com/ | https://git.heroku.com/rust-94037.git
+$ heroku create rust-docker-94037
+  Creating ⬢ rust-docker-94037... done
+  https://rust-docker-94037.herokuapp.com/ | https://git.heroku.com/rust-docker-94037.git
 
 $ heroku container:login
   Login Succeeded
@@ -151,25 +151,25 @@ $ heroku container:push web
     ---> a712a44fe5c2
   Removing intermediate container 917aa9bbf84e
   Successfully built a712a44fe5c2
-  The push refers to a repository [registry.heroku.com/rust-94037/web]
+  The push refers to a repository [registry.heroku.com/rust-docker-94037/web]
   cc1f44ce96f2: Preparing
       ............
   latest: digest: sha256:3c2d4e1c62b5886455e9b79e01365f6665a5b1cba9f1a0a101c376fbaea6907f size: 2621
 ```
 
-open https://rust-94037.herokuapp.com
+open https://rust-docker-94037.herokuapp.com
 
   Results in app error, check logs.
 
   Logs show:
 
   2017-03- app[api]: Release v3 created by user xx@gmail.com
-  2017-03- heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=rust-94037.herokuapp.com request_id=8da4b61d-22cb-4c00-be23-e85e35be297c fwd="76.126.67.146" dyno= connect= service= status=503 bytes= protocol=https
-  2017-03- heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=rust-94037.herokuapp.com
+  2017-03- heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=rust-docker-94037.herokuapp.com request_id=8da4b61d-22cb-4c00-be23-e85e35be297c fwd="76.126.67.146" dyno= connect= service= status=503 bytes= protocol=https
+  2017-03- heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=rust-docker-94037.herokuapp.com
 
   Indicates no dyno/container running because no Procfile.
 
   Add dyno via:
     $ heroku ps:scale web=1
 
-  open https://rust-94037.herokuapp.com results in "Hello Rust!" msg.
+  open https://rust-docker-94037.herokuapp.com results in "Hello Rust!" msg.
