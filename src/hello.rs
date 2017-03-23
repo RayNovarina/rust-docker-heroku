@@ -9,7 +9,7 @@ use iron::status;
 
 // Serves a string to the user.  Try accessing "/".
 fn hello(_: &mut Request) -> IronResult<Response> {
-    let resp = Response::with((status::Ok, "Hello Rust!"));
+    let resp = Response::with((status::Ok, "Hello Rust from a Docker container!"));
     Ok(resp)
 }
 
@@ -17,7 +17,7 @@ fn hello(_: &mut Request) -> IronResult<Response> {
 fn hello_name(req: &mut Request) -> IronResult<Response> {
     let params = req.extensions.get::<Router>().unwrap();
     let name = params.find("name").unwrap();
-    let resp = Response::with((status::Ok, format!("Hello, {}!", name)));
+    let resp = Response::with((status::Ok, format!("Hello, {} from a Docker container!", name)));
     Ok(resp)
 }
 
